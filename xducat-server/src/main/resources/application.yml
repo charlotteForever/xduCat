@@ -1,0 +1,15 @@
+server:
+  port: 8888 #端口注意不要和vue的8080冲突
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/xducat?useSSL=false&allowPublicKeyRetrieval=true
+#    其中ZCWzy是数据库的名字
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jba:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
