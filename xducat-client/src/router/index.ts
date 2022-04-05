@@ -4,26 +4,29 @@ import HomeView from '../views/HomeView.vue'
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    name: 'home',
+    name: '西电流浪猫之家~XDUcat',
     component: HomeView
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    path: '/login',
+    name: '用户登录',
+    component: () => import('../views/LoginView.vue')
   },
   {
-    path: '/login',
-    name: 'login',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/LoginView.vue')
+    path: '/searchResult',
+    name: '猫咪搜索结果',
+    component: () => import('../views/SearchResultView.vue')
   },
-
+  {
+    path: '/refresh',
+    name: '刷新',
+    component: () => import('../views/RefreshView.vue')
+  },
+  {
+    path:'/:catchAll(.*)',
+    name:'页面不存在',
+    component:() => import('../views/NotFoundView.vue')
+  }
 ]
 
 const router = createRouter({

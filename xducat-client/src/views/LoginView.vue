@@ -34,6 +34,7 @@ const login = reactive({
 })
 
 const rules = reactive({
+
   username: [{
     required: true,
     message: '请输入用户名',
@@ -48,22 +49,46 @@ const rules = reactive({
   ],
 })
 
-
 </script>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { ElMessage} from 'element-plus'
+import router from '@/router'
+
 export default defineComponent ({
   methods: {
     onLogin() {
+
+      // 这是为了判断空用户名和密码而设置的
+      // 表单验证判断似乎会出问题，这里单独写了
+      var str = this.login.username;
+      if (str == 'undefined' || !str || !/[^\s]/.test(str)){
+        ElMessage.error('用户名和密码不得为空')
+        return;
+      }
+      
+      str = this.login.password;
+      if (str == 'undefined' || !str || !/[^\s]/.test(str)){
+        ElMessage.error('用户名和密码不得为空')
+        return;
+      }
+
       this.$axios.post('http://localhost:8888/user/login/'+this.login.username+'/'+this.login.password).then((resp)=>{
         if(resp.data==true){
+          // 登录成功后动态添加路由
+          const manage={
+            path: '/manage',
+            name: 'manage',
+            component: () => import('../views/ManageView.vue')
+          };
+          router.addRoute(manage);
+          
           ElMessage({
             message: ('登录成功！欢迎您，'+this.login.username),
             type: 'success',
           })
-          this.$router.push('/about');//登录成功
+          this.$router.push('/manage');//登录成功
         }
         else{
            ElMessage.error('用户名不存在或者密码错误，请检查!')

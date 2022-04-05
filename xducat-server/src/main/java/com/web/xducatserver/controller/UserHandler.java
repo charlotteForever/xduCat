@@ -17,7 +17,6 @@ public class UserHandler {
 
     //用户登录，第一个参数是用户名，第二个是密码。类似于
     //http://localhost:8888/user/login/super/123
-
     @RequestMapping(value="/login/{username}/{password}")
     public boolean login(@PathVariable("username") String username, @PathVariable("password") String password){
 
@@ -33,5 +32,7 @@ public class UserHandler {
             return false;
         }
     }
+
+
 
 }
