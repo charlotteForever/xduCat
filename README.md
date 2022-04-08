@@ -14,7 +14,7 @@ springboot部分的代码在“/ xducat-server / src / main / java / com / web /
 Repository里可以写自己的sql语句</br>
 controller中可以通过浏览器访问相应地址得到数据</br>
 config是解决跨域问题的</br>
-我想应该是即开即用的。如果不行，参考https://www.bilibili.com/video/BV137411B7vB中p1的使用方法重新配置并copy代码。(当然你可以选择只写前端)</br>
+我想应该是即开即用的。如果不行，参考[这个视频](https://www.bilibili.com/video/BV137411B7vB)中p1的使用方法重新配置并copy代码。(当然你可以选择只写前端)</br>
 
 
 vue的部分是“ xducat/ xducat-client / src”</br>
