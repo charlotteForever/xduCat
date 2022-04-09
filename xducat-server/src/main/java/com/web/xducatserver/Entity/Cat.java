@@ -12,4 +12,6 @@ public class Cat {
     private Integer id;
     private String location;
     private String color;
+    private String img;
+
 }

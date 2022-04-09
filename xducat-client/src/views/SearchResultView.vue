@@ -1,12 +1,30 @@
 <template>
+
+
+
   <table>
     <tr v-for="item in cats" :key="item">
-      <td>{{ item.color }}</td>
-      <td>{{ item.location }}</td>
+
+      <table>
+        <tr><img class="catImg" :src="require('../../img/catProfile/' + item.img)" alt="猫咪图片" /></tr>
+        <tr>猫咪颜色：{{ item.color }}</tr>
+        <tr>出现地点：{{ item.location }}</tr>
+
+      </table>
+
+      <!-- 如果只是简单的写地址是没有办法显示图片的 -->
     </tr>
   </table>
 </template>
 
+<style scoped>
+
+.catImg{
+  width: 150px;
+  height: 150px;
+}
+
+</style>
 
 <script>
 export default {
