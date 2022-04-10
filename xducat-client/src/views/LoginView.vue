@@ -1,5 +1,4 @@
 <template>
-
   <div class="login_container">
     <!--外框-->
     <div class="login_box">
