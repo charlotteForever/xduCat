@@ -10,6 +10,9 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/login',
     name: '用户登录',
+    meta:{
+      showNav:true
+    },
     component: () => import('../views/LoginView.vue')
   },
   {
@@ -21,11 +24,6 @@ const routes: Array<RouteRecordRaw> = [
     path: '/refresh',
     name: '刷新',
     component: () => import('../views/RefreshView.vue')
-  },
-  {
-    path: '/catDetail',
-    name: '猫咪详细信息',
-    component: () => import('../views/CatDetailView.vue')
   },
   {
     path:'/:catchAll(.*)',
