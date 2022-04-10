@@ -1,15 +1,16 @@
 <template>
+
   <nav>
     <router-link to="/">Home</router-link> |
     <router-link to="login">Login</router-link>
 
     <el-form ref="searchRef" :model="search">
       <el-form-item prop="search">
-        <el-input v-model="search.input" placeholder="输入猫咪颜色搜索" />
+        <el-input v-if="!$route.meta.showNav" v-model="search.input" placeholder="输入猫咪颜色搜索" />
       </el-form-item>
 
       <el-form-item>
-        <el-button type="primary" @click="onSearch(searchRef)">搜索</el-button>
+        <el-button v-if="!$route.meta.showNav" type="primary" @click="onSearch(searchRef)">搜索</el-button>
       </el-form-item>
     </el-form>
   </nav>
