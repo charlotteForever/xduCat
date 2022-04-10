@@ -1,18 +1,14 @@
 <template>
 
 
-
   <table>
     <tr v-for="item in cats" :key="item">
-
-      <table>
+      <table @click="getDetail(item)"><!-- 如果只是简单的写地址是没有办法显示图片的 -->
         <tr><img class="catImg" :src="require('../../img/catProfile/' + item.img)" alt="猫咪图片" /></tr>
         <tr>猫咪颜色：{{ item.color }}</tr>
         <tr>出现地点：{{ item.location }}</tr>
-
       </table>
-
-      <!-- 如果只是简单的写地址是没有办法显示图片的 -->
+      
     </tr>
   </table>
 </template>
@@ -48,6 +44,14 @@ export default {
           this.cats = resp.data;
         });
     },
+    // 点击猫咪项跳转到详情页面
+    getDetail(item){
+      console.log(item.id);
+      this.$router.push({
+        path: "/catDetail",
+        query: { id: item.id },
+      });
+    }
   },
 
     // 当输入的猫改变时，这里刷新页面
@@ -66,3 +70,4 @@ export default {
   },
 };
 </script>
+

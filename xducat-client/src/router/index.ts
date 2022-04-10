@@ -23,6 +23,11 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('../views/RefreshView.vue')
   },
   {
+    path: '/catDetail',
+    name: '猫咪详细信息',
+    component: () => import('../views/CatDetailView.vue')
+  },
+  {
     path:'/:catchAll(.*)',
     name:'页面不存在',
     component:() => import('../views/NotFoundView.vue')
