@@ -23,3 +23,6 @@ vue的部分是“ xducat/ xducat-client / src”
 App.vue具有路由导航和搜索模块
 views中，HomeView是主页，LoginView是登录界面，ManageView是管理员使用的后台界面，NotFoundView是404页面，RefreshView是刷新搜索结果使用的过渡页面，SearchResult是搜索猫咪得到的结果页面   
 如果npm run serve说你缺module，请尝试安装它   
+
+**2022.4.9更新说明**    
+更新了mysql文件，其中cat表新增一个img属性，存放对应猫咪图片的文件名。猫咪图片请放在“xducat-client\img\catProfile”目录下。    
