@@ -1,40 +1,26 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="login">Login</router-link>
-
-    <el-form ref="searchRef" :model="search">
-      <el-form-item prop="search">
-        <el-input v-model="search.input" placeholder="输入猫咪颜色搜索" />
-      </el-form-item>
-
-      <el-form-item>
-        <el-button type="primary" @click="onSearch(searchRef)">搜索</el-button>
-      </el-form-item>
-    </el-form>
-  </nav>
-
-  <router-view />
+  <div>
+    <nav>
+      <router-link to="/">Home</router-link> |
+      <router-link to="login">Login</router-link>
+    </nav>
+    <router-view />
+  </div>
 </template>
 
-<script lang="ts" setup>
-import { reactive } from "vue";
-const search = reactive({
-  input: "",
-});
-</script>
-
-<script lang="ts">
-import { defineComponent } from "vue";
-
-export default defineComponent({
-  methods: {
-    onSearch() {
-      this.$router.push({
-        path: "/searchResult",
-        query: { color: this.search.input },
-      });
-    },
-  },
-});
-</script>
+<style lang="css">
+a {
+  font-size: 20px;
+  color: black;
+  text-decoration: none;
+}
+a:visited {
+  color: rgb(49, 146, 238);
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+</style>

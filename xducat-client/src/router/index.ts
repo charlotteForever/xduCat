@@ -4,7 +4,7 @@ import HomeView from '../views/HomeView.vue'
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    name: '西电流浪猫之家~XDUcat',
+    name: 'home',
     component: HomeView
   },
   {
@@ -28,9 +28,13 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('../views/CatDetailView.vue')
   },
   {
-    path:'/:catchAll(.*)',
-    name:'页面不存在',
-    component:() => import('../views/NotFoundView.vue')
+    path: '/:catchAll(.*)',
+    name: '页面不存在',
+    component: () => import('../views/NotFoundView.vue')
+  },
+  {
+    path: '/*',
+    redirect: '/home'
   }
 ]
 
