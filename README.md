@@ -26,3 +26,6 @@ views中，HomeView是主页，LoginView是登录界面，ManageView是管理员
 
 **2022.4.9更新说明**    
 更新了mysql文件，其中cat表新增一个img属性，存放对应猫咪图片的文件名。猫咪图片请放在“xducat-client\img\catProfile”目录下。    
+
+**2022.4.10更新说明**     
+在mysql里增加了一个comment表，存储了留言信息。增加了留言功能。   
